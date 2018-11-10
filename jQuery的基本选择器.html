@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style></style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             //设置被选择元素的样式属性
+            $("ul").css("height","200px")
+            $("#lis5").css("color","red");
+            //获取被选择元素的样式属性
+            var bg=$("#lis5").css("color")
+            console.log(bg)
+            //获取被选择元素的字号大小
+            var sz=$("#lis5").css("font-size")
+            console.log(sz)
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li id="lis5">5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</div>    
+</body>
+</html>

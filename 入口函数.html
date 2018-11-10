@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        background-color: hotpink;
+    }
+</style>
+<script src="jquery-3.3.1.js"></script>
+<script>
+   $(document).ready(function(){
+       $("#btn").click(function(){
+           $(".box").show(1000).html("我是内容");
+           $(".box1").hide();
+       })
+   })
+</script>
+<body>
+    <button id="btn">点击</button>
+    <div class="box"></div>
+    <div class="box1"></div>
+</body>
+</html>
