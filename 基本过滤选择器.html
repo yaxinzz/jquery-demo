@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {list-style: none;}
+        ul li{
+              margin: 20px auto ;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $("li:odd").css("background","pink");
+          $("li:even").css("background","yellowgreen");
+          $("li:eq(4)").css("font-size","30px");
+          $("li:lt(5)").css("font-size","30px");
+          $("li:first").css("background","red");
+          $("li:last").css("background","yellow");
+        //   $("li:gt(6)").css("font-size","30px");
+      })  
+    </script>
+</head>
+<body>
+ <ul>
+     <li>01行</li>
+     <li>02行</li>
+     <li>03行</li>
+     <li>04行</li>
+     <li>05行</li>
+     <li>06行</li>
+     <li>07行</li>
+     <li>08行</li>
+     <li>09行</li>
+     <li>10行</li>
+ </ul>  
+</body>
+</html>
