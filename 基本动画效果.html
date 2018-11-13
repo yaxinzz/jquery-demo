@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("div").css({
+                    "display":"none",
+                    "height":"200px",
+                     "width":"300px",
+                     "background":"pink"
+                })
+            // $("button").eq(0).click(function(){
+            //    $("div").show("fast")
+            // })
+            // $("button:last").click(function(){
+            //     $("div").hide(1000,function(){
+            //         alert("已完成隐藏！！！")
+            //     })
+            // })
+            $("button").click(function(){
+                $("div").slideToggle(1000)
+            })
+        })
+    </script>
+</head>
+<body>
+ <button>显示/隐藏</button> 
+ 
+ <div></div>  
+</body>
+</html>
