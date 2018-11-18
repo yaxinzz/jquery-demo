@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+       $(document).ready(function(){
+            $("button:eq(0)").click(function(){
+                $("div").css("height","300px")
+                $("div").height(300)
+            })
+        })
+        $(document).ready(function(){
+            $("button:eq(1)").click(function(){
+                console.log("div的高度是" + $("div").height())
+                console.log("div的高度是" + $("div").css("height"))
+            })
+        })
+        $(document).ready(function(){
+            $("button:eq(2)").click(function(){
+                $("div").css("width","280px")
+                $("div").width(280)
+            })
+        })
+        $(document).ready(function(){
+            $("button:eq(3)").click(function(){
+                console.log("div的宽度是" + $("div").width())
+                console.log("div的宽度是" + $("div").css("width"))
+            })
+            })
+    </script>
+</head>
+<body>
+ <button>设置高度</button>
+ <button>获取高度</button>
+ <button>设置宽度</button>
+ <button>获取宽度</button> 
+ <br> <br>
+ <div style=background:hotpink;></div>  
+</body>
+</html>

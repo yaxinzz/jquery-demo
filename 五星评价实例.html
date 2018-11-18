@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     *{margin: 0;
+     padding: 0;}   
+     .current{
+         list-style: none;
+         color: gold;
+         font-size: 40px;
+     } 
+    .current li{float: left;}  
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var wjxSel = "★",
+              wjxNone  = "☆";
+            $(".current").on("mouseenter","li",function(){
+                // $(this).text(wjxSel).prevAll().text(wjxSel);
+                // $(this).nextAll().text(wjxNone);
+                $(this).text(wjxSel).prevAll()
+                .text(wjxSel).end().nextAll()
+                .text(wjxNone);
+              }).on("click","li",function(){
+                 $(this).addClass('clicked').siblings().removeClass('clicked'); 
+              }).on("mouseleave",function(){
+                  $(".clicked").text(wjxSel).prevAll().text(wjxSel).end()
+                  .nextAll().text(wjxNone);
+              })   
+        })
+    </script>
+</head>
+<body>
+ <ul class="current">
+     <li>☆</li>
+     <li>☆</li>
+     <li>☆</li>
+     <li>☆</li>
+     <li>☆</li>
+ </ul>   
+</body>
+</html>

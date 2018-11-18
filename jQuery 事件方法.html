@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        //bind() 方法向被选元素添加一个或多个事件处理程序，以及当事件发生时运行的函数。
+        $(document).ready(function(){
+            $("p").bind("click",function(e){
+                e.stopPropagation();
+                alert("这个段落被click触发了")
+        });
+            $("button:eq(1)").click(function(){
+                $("p").unbind();
+            })
+        });
+        // delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，
+        // 并规定当这些事件发生时运行的函数
+        // $(document).ready(function(){
+        //     $("ul").delegate("li","click",function(){
+        //         $("li").css("font-size","20px")
+        //     })
+        // })
+        // 自 jQuery 版本 1.7 起，
+        // on() 方法是 bind()、live() 和 delegate() 方法的新的替代品
+        $(document).ready(function(){
+            $("ul").on("click","li",function(){
+                alert($(this).html())
+            });
+             $("button:eq(2)").click(function(){
+                 $("ul").off("click");
+             })
+             // 自 jQuery 版本 1.7 起，
+             // off() 方法是 unbind()、die() 和 undelegate() 方法的新的替代品
+        })
+       
+        
+        //dblclick双击事件
+        $(document).ready(function(){
+            $("button").dblclick(function(){
+                $("p").hide(500)
+            })
+        })
+         $(document).ready(function(){
+            $(".link").on("click",function(e){
+               e.preventDefault();
+            //    event.preventDefault() 方法阻止元素发生默认的行为
+               e.stopPropagation();
+//event.stopPropagation() 方法阻止事件冒泡到父元素，阻止任何父事件处理程序被执行               
+            })
+            $("div").on("click",function(){
+                alert("点击了div")
+            })
+        })
+       
+    </script>
+</head>
+<body>
+<button>点击触发</button> 
+<div>
+ <p>我是p元素</p>
+ <button>移除所有段落(p 元素)的事件句柄</button>
+ <a href="https://yaxinzz.github.io/" class="link"><h1>我的博客</h1></a>
+ <h1>我是h1元素2</h1>
+</div>
+<ul>
+    <li>第1个</li>
+    <li>第2个</li>
+    <li>第3个</li>
+    <li>第4个</li>
+    <li>第5个</li>
+    <li>第6个</li>
+    <li>第7个</li>
+    <li>第8个</li>
+</ul> 
+<button>移除所有(li标签)的事件句柄</button>          
+</body>
+</html>
